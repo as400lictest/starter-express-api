@@ -1,7 +1,10 @@
-const express = require('express')
-const app = express()
-app.all('/', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
-app.listen(process.env.PORT || 3000)
+const express = require('express');
+const app = express();
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/license.lic');
+});
+
+app.listen(3000, function() {
+  console.log('App listening on port 3000!');
+});
